@@ -1,0 +1,150 @@
+import 'package:flutter/material.dart';
+
+Widget build(BuildContext context) {
+  return (
+    <Widget style={styles.container}>
+      <Text style={styles.title}>Welcome to Earn Money</Text>
+      <TextInput
+        style={styles.input}
+        placeholder="Enter Mobile Number"
+        keyboardType="phone-pad"
+        value={phone}
+        onChanged={setPhone}
+        maxLength={11}
+      />
+      <TouchableOpacity style={styles.button} onPressed={handleLogin}>
+        <Text style={styles.buttonText}>Continue</Text>
+      </TouchableOpacity>
+    </Widget>
+  );
+
+  return (
+    <Widget style={styles.container}>
+      <Text style={styles.text}>Welcome to Home Screen</Text>
+    </Widget>
+  );
+
+  return (
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="Login">
+        <Stack.Screen name="Login" component={LoginScreen} />
+        <Stack.Screen name="Home" component={HomeScreen} />
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
+
+  return (
+    <Widget style={styles.container}>
+      <Text style={styles.title}>Withdraw Money</Text>
+      <TextInput
+        style={styles.input}
+        placeholder="Bkash/Nagad Number"
+        keyboardType="phone-pad"
+        value={number}
+        onChanged={setNumber}
+      />
+      <TextInput
+        style={styles.input}
+        placeholder="Enter Amount (৳)"
+        keyboardType="numeric"
+        value={amount}
+        onChanged={setAmount}
+      />
+      <TouchableOpacity style={styles.button} onPressed={handleWithdraw}>
+        <Text style={styles.buttonText}>Withdraw Now</Text>
+      </TouchableOpacity>
+    </Widget>
+  );
+
+  return (
+    <Widget style={styles.container}>
+      <Text style={styles.title}>My Wallet</Text>
+      <View style={styles.card}>
+        <Text style={styles.label}>Total Balance:</Text>
+        <Text style={styles.value}>{balance} ৳</Text>
+      </View>
+      <View style={styles.card}>
+        <Text style={styles.label}>Today's Income:</Text>
+        <Text style={styles.value}>{todayIncome} ৳</Text>
+      </View>
+      <View style={styles.card}>
+        <Text style={styles.label}>Referral Income:</Text>
+        <Text style={styles.value}>{referralIncome} ৳</Text>
+      </View>
+    </Widget>
+  );
+
+  return (
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="Login">
+        <Stack.Screen name="Login" component={LoginScreen} />
+        <Stack.Screen name="Home" component={HomeScreen} />
+        <Stack.Screen name="Withdraw" component={WithdrawScreen} />
+        <Stack.Screen name="Wallet" component={WalletScreen} />
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
+
+  return (
+    <Widget style={styles.container}>
+      <Text style={styles.title}>Watch Ads & Earn</Text>
+      {!showAd ? (
+        <TouchableOpacity style={styles.button} onPressed={handleWatchAd}>
+          <Text style={styles.buttonText}>Watch Ad</Text>
+        </TouchableOpacity>
+      ) : (
+        <Video
+          source={{ uri: 'https://www.w3schools.com/html/mov_bbb.mp4' }}
+          rate={1.0}
+          volume={1.0}
+          isMuted={false}
+          resizeMode="contain"
+          shouldPlay
+          useNativeControls
+          style={styles.video}
+          onPlaybackStatusUpdate={status => {
+            if (status.didJustFinish) handleVideoEnd();
+          }}
+        />
+      )}
+    </Widget>
+  );
+
+  return (
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="Login">
+        <Stack.Screen name="Login" component={LoginScreen} />
+        <Stack.Screen name="Home" component={HomeScreen} />
+        <Stack.Screen name="Withdraw" component={WithdrawScreen} />
+        <Stack.Screen name="Wallet" component={WalletScreen} />
+        <Stack.Screen name="AdWatch" component={AdWatchScreen} />
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
+
+  return (
+    <Widget style={styles.container}>
+      <Text style={styles.title}>Invite & Earn</Text>
+      <Text style={styles.label}>Your Referral Code:</Text>
+      <Text style={styles.code}>{referralCode}</Text>
+      <TouchableOpacity style={styles.button} onPressed={handleShare}>
+        <Text style={styles.buttonText}>Share with Friends</Text>
+      </TouchableOpacity>
+    </Widget>
+  );
+
+  return (
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="Login">
+        <Stack.Screen name="Login" component={LoginScreen} />
+        <Stack.Screen name="Home" component={HomeScreen} />
+        <Stack.Screen name="Withdraw" component={WithdrawScreen} />
+        <Stack.Screen name="Wallet" component={WalletScreen} />
+        <Stack.Screen name="AdWatch" component={AdWatchScreen} />
+        <Stack.Screen name="Referral" component={ReferralScreen} />
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
+
+ 
+}
